@@ -5,10 +5,11 @@ stages:
 publish-github:
   stage: publish
   image: docker:17.07
-  refs:
-    - tags
-  variables:
-    - ${CI_COMMIT_TAG} =~ /^v\d+\.\d+\.\d+$/
+  only:
+    refs:
+      - tags
+    variables:
+      - ${CI_COMMIT_TAG} =~ /^v\d+\.\d+\.\d+$/
   script:
     - apk update && apk add git
     - git push -u https://${GITHUB_USER_NAME}:${GITHUB_USER_TOKEN}@github.com/swilliam-ntct/testrepo2.git HEAD:master
