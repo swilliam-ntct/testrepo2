@@ -1,7 +1,7 @@
 from setuptools import setup
 
-NAME = 'api-client'
-PACKAGE_NAME = 'apiclient'
+NAME = 'edm-client'
+PACKAGE_NAME = 'edmclient'
 VERSION = '<version#>'
 
 def readme():
@@ -17,7 +17,7 @@ def readme():
 
 setup(name=NAME,
       version=VERSION,
-      description='API Client',
+      description='EDM API Client',
       long_description=readme(),
       classifiers=[
         'Operating System :: OS Independent',
